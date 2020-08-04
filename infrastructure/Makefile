@@ -13,7 +13,7 @@ install-voyager:
 	docker-compose exec app php artisan voyager:admin admin@example.net --create
 install-migrations-generator:
 	docker-compose exec app composer require --dev kitloong/laravel-migrations-generator
-	docker-compose exec app php artisan migrate:generate brands,kuras,rice_varieties,sake_item_images,sake_item_rice_varieties,sake_items,specific_class_names,yeast_varieties
+	docker-compose exec app php artisan migrate:generate brands,kuras,rice_varieties,sake_item_images,sake_item_rice_varieties,sake_item_tv_programs,sake_items,specific_class_names,tv_programs,yeast_varieties
 install-recommend-packages:
 	docker-compose exec app composer require doctrine/dbal
 	docker-compose exec app composer require --dev barryvdh/laravel-ide-helper

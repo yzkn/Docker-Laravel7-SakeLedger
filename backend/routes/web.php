@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/sake_item', 'SakeItemController', ['only' => ['index']]); // 'create', 'edit', 'show', 'update', 'destroy', 'store'
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
