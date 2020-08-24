@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/sake_item', 'SakeItemController', ['only' => ['index']]); // 'create', 'edit', 'show', 'update', 'destroy', 'store'
+Route::resource('/kura', 'KuraController', ['only' => ['index']]);
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
