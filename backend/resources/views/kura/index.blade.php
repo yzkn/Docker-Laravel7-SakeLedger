@@ -7,30 +7,30 @@
     <p>{{ $message }}</p>
     @endif
 
-    <table class="table">
-        <thead>
+    <table class="table table-striped">
+        <thead class="thead-dark">
             <tr>
-                <th>Name</th>
-                <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>Founded in</th>
-                <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>Phone</th>
-                <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>Address</th>
-                <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>URL</th>
+                <th scope="col">Name</th>
+                <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th scope="col">Founded in</th>
+                <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th scope="col">Phone</th>
+                <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th scope="col">Address</th>
+                <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th scope="col">URL</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($kuras as $kura)
             <tr>
-                <td>
+                <th scope="row">
                 @if(isset($kura->name_kana) && strlen($kura->name_kana) > 0)
                     <ruby><rb>{{ $kura->name }}</rb><rp>（</rp><rt>{{ $kura->name_kana }}</rt><rp>）</rp></ruby>
                 @else
                     {{ $kura->name }}
                 @endif
-                </td>
+                </th>
                 <td></td>
                 <td>{{ $kura->founded_in }}</td>
                 <td></td>

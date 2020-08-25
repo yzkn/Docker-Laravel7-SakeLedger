@@ -7,23 +7,27 @@
     <p>{{ $message }}</p>
     @endif
 
-    <table class="table">
-        <thead>
+    <table class="table table-striped">
+        <thead class="thead-dark">
             <tr>
-                <th>Image</th>
-                <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>Name</th>
-                <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>Alcohol content</th>
-                <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>Polished-rice ratio</th>
-                <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                <th>Kura</th>
+                <th scope="col">Name</th>
+                <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th scope="col">Image</th>
+                <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th scope="col">Alcohol content</th>
+                <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th scope="col">Polished-rice ratio</th>
+                <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th scope="col">Kura</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($sake_items as $sake_item)
             <tr>
+                <th scope="row">
+                    <ruby><rb>{{ $sake_item->name }}</rb><rp>（</rp><rt>{{ $sake_item->name_kana }}</rt><rp>）</rp></ruby>
+                </th>
+                <td></td>
                 <td>
                     <ul>
                         @foreach ($sake_item->sake_item_images as $image)
@@ -33,8 +37,6 @@
                         @endforeach
                     </ul>
                 </td>
-                <td></td>
-                <td><ruby><rb>{{ $sake_item->name }}</rb><rp>（</rp><rt>{{ $sake_item->name_kana }}</rt><rp>）</rp></ruby> </td>
                 <td></td>
                 <td>{{ $sake_item->alcohol_content }}</td>
                 <td></td>
