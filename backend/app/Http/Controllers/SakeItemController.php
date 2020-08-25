@@ -13,7 +13,7 @@ class SakeItemController extends Controller
      */
     public function index()
     {
-        $sake_items = SakeItem::with('brand.kura')->get()->sortByDesc("id");
+        $sake_items = SakeItem::with(['brand.kura', 'sake_item_images'])->get()->sortByDesc("id");
         return view('sake_item.index', compact('sake_items'));
     }
 }

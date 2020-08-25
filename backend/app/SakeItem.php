@@ -15,4 +15,9 @@ class SakeItem extends Model
     {
         return $this->belongsTo('App\Brand');
     }
+
+    public function sake_item_images()
+    {
+        return $this->hasMany('App\SakeItemImage');
+    }
 }

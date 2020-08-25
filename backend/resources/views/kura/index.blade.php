@@ -38,9 +38,16 @@
                 <td></td>
                 <td>{{ $kura->address }}</td>
                 <td></td>
-                <td>{{ $kura->url }}</td>
+                <td>
+                @if(isset($kura->url) && strlen($kura->url) > 0)
+                    <a href="{{ $kura->url }}" target="_blank">{{ $kura->url }}</a>
+                @endif
+                </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+    <div class="d-flex justify-content-center">
+        {{ $kuras->links() }}
+    </div>
 @endsection

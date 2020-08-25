@@ -13,7 +13,7 @@ class KuraController extends Controller
      */
     public function index()
     {
-        $kuras = Kura::get()->sortByDesc("id");
+        $kuras = Kura::orderBy('phone', 'asc')->paginate(50);
         return view('kura.index', compact('kuras'));
     }
 }
